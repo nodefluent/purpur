@@ -6,6 +6,9 @@ const request = require("request");
 const { Purpur } = require("./../../index.js");
 const config = require("./../test-config.js");
 
+const isOnTravis = !!process.env.KST_TOPIC;
+const testKafkaTopic = process.env.KST_TOPIC || "purpur_test";
+
 describe("Purpur Service INT", function(){
 
     let purpur = null;
