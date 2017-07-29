@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./deployment/purpur.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "_mocha --recursive --timeout 12500 -R spec test/int"
   },
   "keywords": [
     "kafka",
@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "istanbul": "~0.4.5",
-    "mocha": "~3.4.2"
+    "mocha": "~3.4.2",
+    "request": "^2.81.0"
   }
 }
