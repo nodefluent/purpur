@@ -74,7 +74,7 @@ describe("Purpur Service INT", function(){
 
         const body = {
             operation: {
-                name: "test-operation-2",
+                name: "test-operation",
                 connector: "mysql",
                 type: "sink",
                 scale: 1,
@@ -106,6 +106,83 @@ describe("Purpur Service INT", function(){
             body = JSON.parse(body);
             assert.ok(body.id);
             currentOperationId = body.id;
+            done();
+        });
+    });
+
+    it("should be able to upscale operation", function(done){
+
+        assert.ok(currentOperationId);
+        const url = `${getBaseUrl()}/api/v1/operations/${currentOperationId}/scale/3`;
+
+        request({
+            url,
+            method: "PATCH"
+        }, (error, response, body) => {
+            assert.ifError(error);
+            assert.equal(response.statusCode, 204);
+            done();
+        });
+    });
+
+    it("should be able to downscale operation", function(done){
+
+        assert.ok(currentOperationId);
+        const url = `${getBaseUrl()}/api/v1/operations/${currentOperationId}/scale/1`;
+
+        request({
+            url,
+            method: "PATCH"
+        }, (error, response, body) => {
+            assert.ifError(error);
+            assert.equal(response.statusCode, 204);
+            done();
+        });
+    });
+
+    it("should be able to stop operation", function(done){
+
+        assert.ok(currentOperationId);
+        const url = `${getBaseUrl()}/api/v1/operations/${currentOperationId}/stop`;
+
+        request({
+            url,
+            method: "PATCH"
+        }, (error, response, body) => {
+            assert.ifError(error);
+            assert.equal(response.statusCode, 204);
+            done();
+        });
+    });
+
+    it("should be able to resume operation", function(done){
+
+        assert.ok(currentOperationId);
+        const url = `${getBaseUrl()}/api/v1/operations/${currentOperationId}/resume`;
+
+        request({
+            url,
+            method: "PATCH"
+        }, (error, response, body) => {
+            assert.ifError(error);
+            assert.equal(response.statusCode, 204);
+            done();
+        });
+    });
+
+    it("should be able to get detail information of operation", function(done){
+
+        assert.ok(currentOperationId);
+        const url = `${getBaseUrl()}/api/v1/operations?id=${currentOperationId}`;
+
+        request({
+            url,
+            method: "GET"
+        }, (error, response, body) => {
+            assert.ifError(error);
+            assert.equal(response.statusCode, 200);
+            body = JSON.parse(body);
+            assert.equal(body.results[0].id, currentOperationId);
             done();
         });
     });
