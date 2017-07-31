@@ -1,6 +1,6 @@
 {
   "name": "purpur",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "node-kafka-connect as a rest service",
   "main": "index.js",
   "scripts": {
@@ -40,7 +40,7 @@
     "bigtable-kafka-connect": "^1.0.16",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
-    "eisenhertz": "^1.3.0",
+    "eisenhertz": "^1.4.0",
     "express": "^4.15.3",
     "gcloud-pubsub-kafka-connect": "^1.2.0",
     "log4bro": "^3.0.0",
