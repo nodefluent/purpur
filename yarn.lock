@@ -622,13 +622,13 @@ debug@2.6.0:
   dependencies:
     ms "0.7.2"
 
-debug@2.6.7, debug@^2.3.0:
+debug@2.6.7, debug@^2.2.0, debug@^2.3.0:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.1.3, debug@^2.2.0:
+debug@2.6.8, debug@^2.1.3:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -1511,6 +1511,17 @@ jws@^3.0.0, jws@^3.1.4:
 kafka-connect@^2.1.0, kafka-connect@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/kafka-connect/-/kafka-connect-2.2.0.tgz#716d0061f8df0b983fb7de9b89d7295e91c7b4a2"
+  dependencies:
+    async "^2.4.1"
+    bluebird "^3.5.0"
+    body-parser "^1.17.2"
+    express "^4.15.3"
+    prom-client "^10.0.2"
+    sinek "^5.2.0"
+
+kafka-connect@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/kafka-connect/-/kafka-connect-2.3.0.tgz#7dfe73fa7bc2250fc8f361f9fbc8fb6754ec0765"
   dependencies:
     async "^2.4.1"
     bluebird "^3.5.0"
@@ -2462,12 +2473,12 @@ sequelize-auto@^0.4.28:
     sequelize "^3.30.2"
     yargs "^6.6.0"
 
-sequelize-kafka-connect@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/sequelize-kafka-connect/-/sequelize-kafka-connect-2.2.0.tgz#e489d5a741d42f9060d6e397544226bd93abccd0"
+sequelize-kafka-connect@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/sequelize-kafka-connect/-/sequelize-kafka-connect-2.3.0.tgz#2b4cb55597222a998ecfffaffc77c892a846ef04"
   dependencies:
     commander "^2.11.0"
-    kafka-connect "^2.2.0"
+    kafka-connect "^2.3.0"
     mysql2 "^1.3.6"
     pg "^7.0.2"
     pg-hstore "^2.3.2"
