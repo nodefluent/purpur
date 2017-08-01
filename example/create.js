@@ -2,6 +2,7 @@
 
 const request = require("request");
 const connectConfig = require("./connectConfig.js");
+const converterFactory = require("./converterFactory.js");
 
 const options = {
     method: "POST",
@@ -15,7 +16,8 @@ const options = {
             connector: "sqlite3",
             type: "sink",
             config: connectConfig,
-            scale: 1
+            scale: 1,
+            converterFactory
         }
     })
 };
